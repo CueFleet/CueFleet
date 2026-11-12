@@ -1,0 +1,33 @@
+[![CueFleet | Binance event contract trading terminal](assets/cuefleet-cover.webp)](https://cuefleet.com/website/en.html)
+
+# CueFleet · Binance Event Contract Trading
+
+**Desktop trading, local API access and copy trading in one client.**
+
+**[Download for Windows](https://cuefleet.com/download/windows)** · **[Download for Linux](https://cuefleet.com/download/linux)** · [Website](https://cuefleet.com/website/en.html) · [Discord](https://discord.gg/phjusp8TT) · [简体中文](README.md)
+
+## Features
+
+- **Desktop trading**　View BTC and ETH index charts, place orders, track open positions and see settlement results in one workspace.
+- **API trading**　Enable the local API while the client is running so your strategy can query accounts, submit orders and check receipts. Find the API reference in the client.
+- **Copy trading**　Compare project performance, try paper following or subscribe in the client. You can also apply to lead a project and earn a share of eligible subscription fees.
+
+[Explore the copy trading marketplace](https://cuefleet.com/website/en.html#leaders) · [Create a CueFleet account](https://cuefleet.com/register#lang=en)
+
+<details>
+<summary>See the trading workspace</summary>
+
+![CueFleet trading workspace demo with an index chart, order controls and order history](assets/event-trading-en.webp)
+
+The product demo uses historical prices and example orders.
+
+</details>
+
+## Installation and support
+
+- **Windows x64**　Download and run the installer.
+- **Linux x86-64**　Extract the client package, follow the included README to start the WebUI, then open it in your browser.
+
+Get help through [website support](https://cuefleet.com/website/en.html#help), [Discord](https://discord.gg/phjusp8TT) or [email](mailto:support@cuefleet.com).
+
+CueFleet is third-party software. Binance sets trading eligibility. Event contract trading can result in losses, and past performance does not predict future returns.
