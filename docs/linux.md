@@ -15,9 +15,22 @@ cd CueFleet-Linux-x64 &&
 sh ./setup.sh
 ```
 
-按向导设置窗口密码。要从手机或其他电脑访问，在「自动配置免费 HTTPS？」选择是，核对或输入服务器公网 IPv4。证书会自动续期。启动后保持终端打开。
+用手机或其他电脑访问时，选择一种 HTTPS 配置并设置窗口密码。
 
-在云安全组和系统防火墙放行公网入站 TCP `80`，供证书签发和续期。WebUI 端口默认是 TCP `19425`，来源可限制为访问设备的公网 IP。
+| 访问方式 | 在安装向导中选择 |
+| --- | --- |
+| 自动配置 HTTPS | 确认服务器公网 IPv4，证书自动申请和续期。 |
+| 使用自己的证书 | 填写访问用的域名或 IP，以及匹配该地址的证书链和私钥 PEM 路径。 |
+| 仅本机访问 | 在服务器本机打开向导显示的 HTTP 地址。 |
+
+远程访问时放行 WebUI 的 TCP 端口，默认 `19425`。启动后保持终端打开。
+
+<details>
+<summary>自动签发条件和 80 端口占用</summary>
+
+在云安全组和系统防火墙放行公网入站 TCP `80`，供证书签发和续期。如果已有网站使用该端口，让公网 IP 对应的 HTTP 站点从 `/var/lib/cuefleet-webui-acme` 提供 `/.well-known/acme-challenge/` 文件，保留原 URL 路径。配置好后，在向导中选择使用现有 Web 服务。
+
+</details>
 
 ## 2. 在浏览器打开
 
@@ -33,24 +46,4 @@ sh ./setup.sh
 
 ![CueFleet WebUI 的币安账号连接提示](../assets/linux-binance-login.webp)
 
-<details>
-<summary>证书签发失败或已有证书</summary>
-
-签发失败时，核对服务器公网 IPv4 和 TCP `80` 的入站规则，再重试。初次跳过后，可重新运行 `sh ./setup.sh` 配置。若 TCP `80` 已被现有网站占用，可沿用自己的可信证书。
-
-停止正在运行的客户端，将域名和证书路径替换成自己的配置，然后运行：
-
-```bash
-CUEFLEET_HTTPS_HOST=your-domain.example \
-CUEFLEET_HTTPS_CERT=/path/to/fullchain.pem \
-CUEFLEET_HTTPS_KEY=/path/to/privkey.pem \
-sh ./start.sh
-```
-
-用 `https://你的域名:19425/` 打开。若使用自定义端口，启动和访问时沿用同一个端口。
-
-服务器本机可用向导显示的本机地址访问。公网 HTTP 为明文传输，请通过可信 HTTPS 登录和交易。
-
-</details>
-
-升级与手动启动见安装包内的 `README.md`。
+重启时运行向导显示的启动命令。要更改访问方式，先停止客户端，再运行 `sh ./setup.sh`。

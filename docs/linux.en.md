@@ -15,9 +15,22 @@ cd CueFleet-Linux-x64 &&
 sh ./setup.sh
 ```
 
-Set a window password. For access from your phone or another computer, choose **yes** when asked to set up free HTTPS. Confirm or enter your server’s public IPv4 address. CueFleet renews the certificate automatically. Leave the terminal open after startup.
+To connect from a phone or another computer, choose an HTTPS option and set a window password.
 
-Allow public inbound TCP `80` in your cloud and server firewalls for certificate issuance and renewal. The default WebUI port is TCP `19425`. You can restrict it to the connecting device’s public IP.
+| Access | Choose in the wizard |
+| --- | --- |
+| Set up HTTPS automatically | Confirm your server’s public IPv4 address. CueFleet issues and renews the certificate. |
+| Use your own certificate | Enter the domain or IP you’ll use and the PEM paths for its certificate chain and private key. |
+| Local access only | Open the HTTP address shown by the wizard on the server. |
+
+For remote access, allow the WebUI TCP port, which defaults to `19425`. Leave the terminal open after startup.
+
+<details>
+<summary>Automatic certificates and port 80</summary>
+
+Allow inbound public TCP `80` in your cloud and server firewalls for issuance and renewal. If a website already uses it, configure the HTTP site for your server’s public IP to serve `/.well-known/acme-challenge/` from `/var/lib/cuefleet-webui-acme` with the request path intact. Then choose to use the existing web server in the wizard.
+
+</details>
 
 ## 2. Open WebUI in your browser
 
@@ -33,24 +46,4 @@ Open **Binance Accounts → Add account**, accept the agreement, and complete si
 
 ![Binance account connection prompt in CueFleet WebUI](../assets/linux-binance-login-en.webp)
 
-<details>
-<summary>If certificate setup fails or you already have a certificate</summary>
-
-If certificate setup fails, check your server’s public IPv4 and the inbound rules for TCP `80`, then retry. If you skipped HTTPS, run `sh ./setup.sh` again. If an existing website uses TCP `80`, you can use your own trusted certificate.
-
-Stop the running client. Replace the domain and certificate paths, then run:
-
-```bash
-CUEFLEET_HTTPS_HOST=your-domain.example \
-CUEFLEET_HTTPS_CERT=/path/to/fullchain.pem \
-CUEFLEET_HTTPS_KEY=/path/to/privkey.pem \
-sh ./start.sh
-```
-
-Open `https://your-domain.example:19425/`. If you use a custom port, use that same port to start the client and open the page.
-
-For access directly from the server, use the local address shown by the wizard. Public HTTP is unencrypted. Use trusted HTTPS to sign in or trade remotely.
-
-</details>
-
-See the included `README.md` for upgrades and manual startup.
+To restart, run the command shown by the wizard. To change the access mode, stop the client and run `sh ./setup.sh`.
