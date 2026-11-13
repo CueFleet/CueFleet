@@ -6,14 +6,24 @@ Requires **Ubuntu 24.04 (x86-64)**. Install on the server, then open WebUI from 
 
 ## 1. Install CueFleet
 
-Sign in to the server as `root` or a regular user with sudo access and run these commands in an empty directory. When started as `root`, setup prepares a dedicated user to run CueFleet.
+**Download and extract** in an empty directory you own. Regular users can run these commands without `sudo`.
 
 ```bash
 curl -fL https://cuefleet.com/download/linux -o CueFleet-Linux-x64.tar.gz &&
 tar -xzf CueFleet-Linux-x64.tar.gz &&
-cd CueFleet-Linux-x64 &&
+cd CueFleet-Linux-x64
+```
+
+**Install and configure** from the extracted directory with the same command for either account type.
+
+```bash
 sh ./setup.sh
 ```
+
+| Signed in as | How system privileges are used |
+| --- | --- |
+| `root` | Run the command directly. The wizard runs WebUI under a dedicated unprivileged account. |
+| Regular user with `sudo` access | Run the command directly. The wizard calls `sudo` for system operations such as installing dependencies, configuring the sandbox, or enabling automatic HTTPS. |
 
 To connect from a phone or another computer, choose an HTTPS option and set a window password.
 
@@ -23,7 +33,7 @@ To connect from a phone or another computer, choose an HTTPS option and set a wi
 | Use your own certificate | Enter the domain or IP you’ll use and the PEM paths for its certificate chain and private key. |
 | Local access only | Open the HTTP address shown by the wizard on the server. |
 
-For remote access, allow the WebUI TCP port, which defaults to `19425`. Leave the terminal open after startup.
+For remote access, have the server administrator allow the WebUI TCP port. The default is `19425`. Leave the terminal open after startup.
 
 <details>
 <summary>Automatic certificates and port 80</summary>
@@ -46,4 +56,8 @@ Open **Binance Accounts → Add account**, accept the agreement, and complete si
 
 ![Binance account connection prompt in CueFleet WebUI](../assets/linux-binance-login-en.webp)
 
-To restart, run the command shown by the wizard. To change the access mode, stop the client and run `sh ./setup.sh`.
+**Start WebUI again** using the same Linux account as during setup. From the setup directory, run the `sh ./start.sh` command shown by the wizard, including any `--port` argument. Regular users can start it without `sudo`.
+
+To change the window password, stop the client and run `sh ./start.sh --set-password`.
+
+To change the access mode, stop the client and run `sh ./setup.sh`.

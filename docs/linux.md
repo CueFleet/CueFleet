@@ -6,14 +6,24 @@
 
 ## 1. 安装 CueFleet
 
-用 `root` 或有 sudo 权限的普通用户登录服务器，在空目录运行。用 `root` 安装时，向导会自动准备专用用户运行 CueFleet。
+**下载和解压** · 在自己的空目录执行，普通用户无需 `sudo`。
 
 ```bash
 curl -fL https://cuefleet.com/download/linux -o CueFleet-Linux-x64.tar.gz &&
 tar -xzf CueFleet-Linux-x64.tar.gz &&
-cd CueFleet-Linux-x64 &&
+cd CueFleet-Linux-x64
+```
+
+**安装和配置** · 在解压目录运行同一条命令。
+
+```bash
 sh ./setup.sh
 ```
+
+| 当前登录身份 | 系统权限怎么用 |
+| --- | --- |
+| `root` | 直接执行。向导会用专用的普通权限账号运行 WebUI。 |
+| 有 `sudo` 权限的普通用户 | 直接执行。向导只在安装系统依赖、配置沙箱或启用自动 HTTPS 等系统操作时调用 `sudo`。 |
 
 用手机或其他电脑访问时，选择一种 HTTPS 配置并设置窗口密码。
 
@@ -23,7 +33,7 @@ sh ./setup.sh
 | 使用自己的证书 | 填写访问用的域名或 IP，以及匹配该地址的证书链和私钥 PEM 路径。 |
 | 仅本机访问 | 在服务器本机打开向导显示的 HTTP 地址。 |
 
-远程访问时放行 WebUI 的 TCP 端口，默认 `19425`。启动后保持终端打开。
+远程访问时，由服务器管理员放行 WebUI 的 TCP 端口，默认 `19425`。启动后保持终端打开。
 
 <details>
 <summary>自动签发条件和 80 端口占用</summary>
@@ -46,4 +56,8 @@ sh ./setup.sh
 
 ![CueFleet WebUI 的币安账号连接提示](../assets/linux-binance-login.webp)
 
-重启时运行向导显示的启动命令。要更改访问方式，先停止客户端，再运行 `sh ./setup.sh`。
+**日常启动** · 用安装时的同一用户，在安装目录执行向导显示的 `sh ./start.sh` 命令。向导指定了端口时保留 `--port` 参数。普通用户无需 `sudo`。
+
+要改窗口密码，先停止客户端，再运行 `sh ./start.sh --set-password`。
+
+要更改访问方式，先停止客户端，再运行 `sh ./setup.sh`。
