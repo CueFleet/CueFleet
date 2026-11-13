@@ -25,6 +25,8 @@ sh ./setup.sh
 | `root` | Run the command directly. The wizard runs WebUI under a dedicated unprivileged account. |
 | Regular user with `sudo` access | Run the command directly. The wizard calls `sudo` for system operations such as installing dependencies, configuring the sandbox, or enabling automatic HTTPS. |
 
+Starting with 0.5.73, the wizard shows administrator commands before running them and labels each command as `root` or `sudo`.
+
 To connect from a phone or another computer, choose an HTTPS option and set a window password.
 
 | Access | Choose in the wizard |
