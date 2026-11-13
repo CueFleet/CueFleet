@@ -26,7 +26,7 @@
 ## 安装与支持
 
 - **Windows x64**　下载安装包，按提示完成安装。
-- **Linux x86-64**　[查看 Linux 使用教程](docs/linux.md)，了解安装、本机访问、SSH 转发、公网 IP 访问和币安登录。
+- **Linux x86-64**　解压后运行 `sh ./setup.sh`。[查看 Linux 快速开始](docs/linux.md)。
 
 使用中遇到问题，可以通过[官网在线客服](https://cuefleet.com/#help)、[Discord 社区](https://discord.gg/phjusp8TT)或[邮件](mailto:support@cuefleet.com)联系。
 

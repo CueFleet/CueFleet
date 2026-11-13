@@ -2,85 +2,101 @@
 
 [简体中文](linux.md) · [Back to the project](../README.en.md)
 
-This guide is for **Ubuntu 24.04 (x86-64)**. Install CueFleet on your Linux computer or server and open its WebUI in a browser. The examples use **0.5.66**.
+For **Ubuntu 24.04 (x86-64)**. CueFleet runs on your Linux computer or server. You use it from a browser.
 
-## 1. Install CueFleet
+## 1. Run the setup wizard
 
-Install the system dependencies. Use a regular Linux user to download, extract, and run the client.
+[Download version 0.5.67](https://cuefleet.com/downloads/linux/CueFleet-0.5.67-linux-x64.tar.gz) · [SHA-256 checksum](https://cuefleet.com/downloads/linux/CueFleet-0.5.67-linux-x64.tar.gz.sha256)
 
-```bash
-sudo apt update
-sudo apt install curl dbus-daemon xvfb xauth openssl libgtk-3-0t64 libnss3 libgbm1 libasound2t64 libcups2t64 libatk-bridge2.0-0t64 libxss1 fonts-liberation
-```
-
-Download the client and checksum into a new directory. Extract the archive after the checksum passes.
-
-[Download version 0.5.66](https://cuefleet.com/downloads/linux/CueFleet-0.5.66-linux-x64.tar.gz) · [SHA-256 checksum](https://cuefleet.com/downloads/linux/CueFleet-0.5.66-linux-x64.tar.gz.sha256)
+Put the archive on the Linux machine where CueFleet will run. As a regular user, open a terminal in the directory containing the file.
 
 ```bash
-archive=CueFleet-0.5.66-linux-x64.tar.gz
-base=https://cuefleet.com/downloads/linux
-curl -fLO "$base/$archive" &&
-  curl -fLO "$base/$archive.sha256" &&
-  sha256sum -c "$archive.sha256" &&
-  tar -xzf "$archive" &&
-  cd CueFleet-Linux-x64
+tar -xzf CueFleet-0.5.67-linux-x64.tar.gz
+cd CueFleet-Linux-x64
+sh ./setup.sh
 ```
 
-## 2. Choose how to connect
+The wizard checks system dependencies, helps you choose how to connect and which port to use, and starts CueFleet. Keep this terminal open and save the restart command shown by the wizard. Linux may ask for your sudo password when installing dependencies or setting up the browser sandbox. Run `sh ./setup.sh --lang en` to use English.
 
-### Local access or SSH forwarding
+## 2. Open the WebUI in a browser
 
-Start the client from `CueFleet-Linux-x64` on your Linux machine.
-
-```bash
-sh ./start.sh
-```
-
-Open [http://127.0.0.1:19425/](http://127.0.0.1:19425/) in a browser on the same machine. If the client runs on a remote server, open a terminal on your own computer, run the following command, and then open the same URL.
+- **On the Linux machine**. Open the local address shown by the wizard. The default is `http://127.0.0.1:19425/`.
+- **From another computer**. Choose local or SSH access on the server. Open a terminal on your own computer, run the command below, and leave it open. On the same computer, open `http://127.0.0.1:19425/` in your browser.
 
 ```bash
 ssh -N -L 19425:127.0.0.1:19425 user@server
 ```
 
-Replace `user@server` with your SSH username and server address. With SSH forwarding, only the server's SSH port needs to be reachable. If port `19425` is in use, start with `sh ./start.sh --port 19426` and update the forwarding command and browser address accordingly.
+Replace `user@server` with your SSH username and server address. If the wizard used a different port, update both port numbers and the browser address.
 
-### Direct access over a public IP (HTTP)
+## 3. Connect a Binance account
 
-In an interactive terminal on your server, set a unique window password of at least 12 characters. The terminal hides it as you type. Then start CueFleet with the server's public IPv4 address, port, and idle lock timeout.
+Sign in to CueFleet. Open **Binance Accounts → Add Account**, accept the connection agreement, and open the official Binance sign-in window.
+
+Use the temporary viewer to access the Binance window. On the Linux machine running CueFleet, open another terminal as the same user, enter the client directory, and run the following command.
 
 ```bash
-sh ./start.sh --set-password
+sh ./start.sh --binance-login
+```
+
+- **Local Linux desktop**. Copy the printed `vncviewer` command into another terminal on the same computer. If you need the viewer, run `sudo apt install tigervnc-viewer` first.
+- **Remote Linux server**. Copy the printed SSH command into a terminal on your own computer and replace `SERVER` with your SSH server address. In your VNC viewer, connect to `127.0.0.1` on port `5901`.
+
+Complete sign-in in the official Binance window. Once the account appears in the WebUI, close the viewer and any VNC tunnel. The server needs no open VNC port.
+
+## Advanced setup
+
+### Set up a user on a root-only server
+
+Sign in as root and run the following commands to create and switch to a regular user. Download and extract the package in the new user's home directory.
+
+```bash
+adduser cuefleet
+usermod -aG sudo cuefleet
+su - cuefleet
+```
+
+If the server uses SSH keys, add your public key for the new user and verify that you can sign in as `cuefleet@server` before using SSH forwarding.
+
+### Connect directly to a public IP
+
+In the wizard, choose public HTTP, enter the server's public IPv4 address, and set a separate window password and idle lock timeout. Allow the selected TCP port in the cloud and server firewalls. You can restrict access to your own public IP. Open the address shown by the wizard, unlock the window, and sign in to CueFleet.
+
+**Public HTTP is unencrypted. Someone on the network could intercept the password or login session.** For private remote access, use SSH forwarding.
+
+### Launch manually or change the password
+
+Once the wizard has installed the dependencies, you can use the launch commands directly.
+
+```bash
+sh ./start.sh
+sh ./start.sh --port 19426
+```
+
+The first command uses the default port. The second sets a custom port. The supported range is `1024–65535` and the default is `19425`. To set or change the window password, stop CueFleet, then run `sh ./start.sh --set-password`. The password must be at least 12 characters, and the terminal hides it as you type.
+
+```bash
 sh ./start.sh --public-http 203.0.113.10 --port 19426 --idle-minutes 10
 ```
 
-Replace `203.0.113.10` with the actual public IP. Allow the chosen TCP port in both your cloud firewall and the server firewall, ideally only from your own public IP. Open `http://YOUR_PUBLIC_IP:19426/`, unlock the window, and then sign in to CueFleet.
+Replace `203.0.113.10` with your server's public IPv4 address. The idle lock timeout can be `1–120` minutes and defaults to `10`. CueFleet keeps running while the window is locked.
 
-- The port can be `1024–65535` and defaults to `19425`.
-- The idle lock can be set to `1–120` minutes and defaults to `10`. Enter the window password again to unlock it. The client keeps running in the background.
-- To change the window password, stop the client and run `sh ./start.sh --set-password` again.
+### Download and verify from the server
 
-**Public HTTP is unencrypted. Someone on the network could intercept your window password or login session.** For private remote access, prefer SSH forwarding.
-
-## 3. Sign in to Binance on a headless server
-
-After signing in to CueFleet, open **Binance Accounts → Add Account**, accept the connection agreement, and open the official Binance sign-in window. On the server, open another terminal as the same Linux user, enter the client directory, and install and start the temporary sign-in viewer.
+Run the following commands in an empty directory. If `curl` is missing, run `sudo apt install curl` first.
 
 ```bash
-sudo apt install x11vnc
-EVENTFOLO_NODE="$PWD/bin/node" sh ./scripts/linux-executor.sh login "${XDG_STATE_HOME:-$HOME/.local/state}/cuefleet/run"
+archive=CueFleet-0.5.67-linux-x64.tar.gz
+base=https://cuefleet.com/downloads/linux
+curl -fLO "$base/$archive" &&
+  curl -fLO "$base/$archive.sha256" &&
+  sha256sum -c "$archive.sha256"
 ```
 
-On your own computer, open another terminal and forward the `login.sock` path printed by the viewer. Replace the example socket path and `user@server` with your actual values.
+After the checksum passes, go back to step 1 to extract the archive and run the wizard.
 
-```bash
-ssh -N -L 5901:/home/user/.local/state/cuefleet/run/login.sock user@server
-```
+### Update the client
 
-Use a VNC client to connect to `127.0.0.1` on port `5901`. Complete sign-in and verification in the official Binance window. Once the account appears in WebUI, you can close the temporary viewer and its VNC tunnel. The Binance session is stored on the machine running CueFleet. Moving to another machine requires verification again.
+Extract the new release to a new directory. Stop the old client (`Ctrl+C` if it is running in the foreground), then run `sh ./setup.sh` from the new directory. Keep the same Linux user, `XDG_STATE_HOME`, and launch options to reuse your window password and Binance connections. The default state directory is `~/.local/state/cuefleet`. Restarting briefly interrupts receipt of copy-trading signals.
 
-## 4. Update the client
-
-Download the new release from the website and extract it into a new directory. Stop the old client (`Ctrl+C` if running in the foreground), then start the new one. Keep the same Linux user, `XDG_STATE_HOME`, and launch options to reuse your window password and Binance connections. If `XDG_STATE_HOME` is unset, CueFleet stores its state in `~/.local/state/cuefleet`. Restarting briefly interrupts receipt of copy-trading signals.
-
-[Download CueFleet](https://cuefleet.com/#download) · [Contact support](mailto:support@cuefleet.com)
+[Download CueFleet](https://cuefleet.com/website/en.html#download) · [Contact support](mailto:support@cuefleet.com)

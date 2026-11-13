@@ -26,7 +26,7 @@ The product demo uses historical prices and example orders.
 ## Installation and support
 
 - **Windows x64**　Download and run the installer.
-- **Linux x86-64**　[Read the Linux setup guide](docs/linux.en.md) for installation, local and remote access, and Binance sign-in.
+- **Linux x86-64**　Extract the archive and run `sh ./setup.sh`. [See the Linux quick start](docs/linux.en.md).
 
 Get help through [website support](https://cuefleet.com/website/en.html#help), [Discord](https://discord.gg/phjusp8TT) or [email](mailto:support@cuefleet.com).
 
