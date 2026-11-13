@@ -4,7 +4,7 @@
 
 **在一个客户端完成桌面交易、接入本机 API 和跟单。**
 
-**[下载 Windows](https://cuefleet.com/download/windows)** · **[下载 Linux](https://cuefleet.com/download/linux)** · [访问官网](https://cuefleet.com/) · [加入 Discord](https://discord.gg/phjusp8TT) · [English](README.en.md)
+**[下载 Windows](https://cuefleet.com/download/windows)** · **[下载 Linux](https://cuefleet.com/download/linux)** · **[Linux 使用教程](docs/linux.md)** · [访问官网](https://cuefleet.com/) · [加入 Discord](https://discord.gg/phjusp8TT) · [English](README.en.md)
 
 ## 产品功能
 
@@ -26,7 +26,7 @@
 ## 安装与支持
 
 - **Windows x64**　下载安装包，按提示完成安装。
-- **Linux x86-64**　解压客户端包，按包内 README 启动 WebUI，再通过浏览器使用。
+- **Linux x86-64**　[查看 Linux 使用教程](docs/linux.md)，了解安装、本机访问、SSH 转发、公网 IP 访问和币安登录。
 
 使用中遇到问题，可以通过[官网在线客服](https://cuefleet.com/#help)、[Discord 社区](https://discord.gg/phjusp8TT)或[邮件](mailto:support@cuefleet.com)联系。
 

@@ -4,7 +4,7 @@
 
 **Desktop trading, local API access and copy trading in one client.**
 
-**[Download for Windows](https://cuefleet.com/download/windows)** · **[Download for Linux](https://cuefleet.com/download/linux)** · [Website](https://cuefleet.com/website/en.html) · [Discord](https://discord.gg/phjusp8TT) · [简体中文](README.md)
+**[Download for Windows](https://cuefleet.com/download/windows)** · **[Download for Linux](https://cuefleet.com/download/linux)** · **[Linux setup guide](docs/linux.en.md)** · [Website](https://cuefleet.com/website/en.html) · [Discord](https://discord.gg/phjusp8TT) · [简体中文](README.md)
 
 ## Features
 
@@ -26,7 +26,7 @@ The product demo uses historical prices and example orders.
 ## Installation and support
 
 - **Windows x64**　Download and run the installer.
-- **Linux x86-64**　Extract the client package, follow the included README to start the WebUI, then open it in your browser.
+- **Linux x86-64**　[Read the Linux setup guide](docs/linux.en.md) for installation, local and remote access, and Binance sign-in.
 
 Get help through [website support](https://cuefleet.com/website/en.html#help), [Discord](https://discord.gg/phjusp8TT) or [email](mailto:support@cuefleet.com).
 
