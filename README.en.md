@@ -26,7 +26,7 @@ The product demo uses historical prices and example orders.
 ## Installation and support
 
 - **Windows x64**　Download and run the installer.
-- **Ubuntu 24.04 x86-64**　Install the `.deb` with APT and run `cuefleet setup`. [See the Linux quick start](docs/linux.en.md).
+- **Ubuntu 24.04 x86-64**　Install the `.deb` with APT, set a window password with `cuefleet setup --set-password`, and run `cuefleet start`. [See the Linux quick start](docs/linux.en.md)
 
 Get help through [website support](https://cuefleet.com/website/en.html#help), [Discord](https://discord.gg/phjusp8TT) or [email](mailto:support@cuefleet.com).
 

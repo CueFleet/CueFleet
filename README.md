@@ -26,7 +26,7 @@
 ## 安装与支持
 
 - **Windows x64**　下载安装包，按提示完成安装。
-- **Ubuntu 24.04 x86-64**　用 APT 安装 `.deb`，运行 `cuefleet setup` 完成配置。[查看 Linux 快速开始](docs/linux.md)。
+- **Ubuntu 24.04 x86-64**　用 APT 安装 `.deb`，运行 `cuefleet setup --set-password` 设置锁屏密码，再运行 `cuefleet start`。[查看 Linux 快速开始](docs/linux.md)
 
 使用中遇到问题，可以通过[官网在线客服](https://cuefleet.com/#help)、[Discord 社区](https://discord.gg/phjusp8TT)或[邮件](mailto:support@cuefleet.com)联系。
 
