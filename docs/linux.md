@@ -6,26 +6,27 @@
 
 ## 1. 安装 CueFleet
 
-**下载和解压** · 在自己的空目录执行，普通用户无需 `sudo`。
+**下载 .deb · 无需 sudo** · [SHA-256 校验文件](https://cuefleet.com/download/linux-deb.sha256)
 
 ```bash
-curl -fL https://cuefleet.com/download/linux -o CueFleet-Linux-x64.tar.gz &&
-tar -xzf CueFleet-Linux-x64.tar.gz &&
-cd CueFleet-Linux-x64
+curl -fL https://cuefleet.com/download/linux-deb -o CueFleet-linux-amd64.deb
 ```
 
-**安装和配置** · 在解压目录运行同一条命令。
+**安装软件包 · 需要管理员权限**
 
 ```bash
-sh ./setup.sh
+sudo apt install ./CueFleet-linux-amd64.deb
 ```
 
-| 当前登录身份 | 系统权限怎么用 |
-| --- | --- |
-| `root` | 直接执行。向导会用专用的普通权限账号运行 WebUI。 |
-| 有 `sudo` 权限的普通用户 | 直接执行。向导只在安装系统依赖、配置沙箱或启用自动 HTTPS 等系统操作时调用 `sudo`。 |
+已经用 root 登录时，去掉 `sudo`。APT 会一并安装依赖。
 
-从 0.5.73 起，向导会在执行前显示需要管理员权限的命令，并标明使用 `root` 还是 `sudo`。
+**首次配置 · 用当前账号执行**
+
+```bash
+cuefleet setup --lang zh
+```
+
+普通用户直接执行。自动 HTTPS 需要提权时，向导会先显示要执行的命令。root 启动向导时，CueFleet 由专用账号运行。
 
 用手机或其他电脑访问时，选择一种 HTTPS 配置并设置窗口密码。
 
@@ -58,8 +59,15 @@ sh ./setup.sh
 
 ![CueFleet WebUI 的币安账号连接提示](../assets/linux-binance-login.webp)
 
-**日常启动** · 用安装时的同一用户，在安装目录执行向导显示的 `sh ./start.sh` 命令。向导指定了端口时保留 `--port` 参数。普通用户无需 `sudo`。
+## 4. 日常启动与改密码
 
-要改窗口密码，先停止客户端，再运行 `sh ./start.sh --set-password`。
+用首次配置时的账号运行 `cuefleet start`。向导显示自定义端口时，保留 `--port` 参数。
 
-要更改访问方式，先停止客户端，再运行 `sh ./setup.sh`。
+要改窗口密码，先停止客户端，再运行 `cuefleet set-password`。要更改访问方式，重新运行 `cuefleet setup`。
+
+<details>
+<summary>使用便携压缩包 .tar.gz</summary>
+
+[下载便携压缩包](https://cuefleet.com/download/linux)，解压后运行 `sh ./setup.sh --lang zh`。日常启动时运行向导显示的 `sh ./start.sh` 命令。
+
+</details>

@@ -6,26 +6,27 @@ Requires **Ubuntu 24.04 (x86-64)**. Install on the server, then open WebUI from 
 
 ## 1. Install CueFleet
 
-**Download and extract** in an empty directory you own. Regular users can run these commands without `sudo`.
+**Download the .deb · No sudo needed** · [SHA-256 checksum](https://cuefleet.com/download/linux-deb.sha256)
 
 ```bash
-curl -fL https://cuefleet.com/download/linux -o CueFleet-Linux-x64.tar.gz &&
-tar -xzf CueFleet-Linux-x64.tar.gz &&
-cd CueFleet-Linux-x64
+curl -fL https://cuefleet.com/download/linux-deb -o CueFleet-linux-amd64.deb
 ```
 
-**Install and configure** from the extracted directory with the same command for either account type.
+**Install the package · Administrator access required**
 
 ```bash
-sh ./setup.sh
+sudo apt install ./CueFleet-linux-amd64.deb
 ```
 
-| Signed in as | How system privileges are used |
-| --- | --- |
-| `root` | Run the command directly. The wizard runs WebUI under a dedicated unprivileged account. |
-| Regular user with `sudo` access | Run the command directly. The wizard calls `sudo` for system operations such as installing dependencies, configuring the sandbox, or enabling automatic HTTPS. |
+If you signed in as root, omit `sudo`. APT installs the dependencies.
 
-Starting with 0.5.73, the wizard shows administrator commands before running them and labels each command as `root` or `sudo`.
+**First-time setup · Use your current account**
+
+```bash
+cuefleet setup --lang en
+```
+
+Regular users run the wizard directly. It shows any administrator commands needed for automatic HTTPS before running them. When you run setup as root, CueFleet runs under a dedicated account.
 
 To connect from a phone or another computer, choose an HTTPS option and set a window password.
 
@@ -58,8 +59,15 @@ Open **Binance Accounts → Add account**, accept the agreement, and complete si
 
 ![Binance account connection prompt in CueFleet WebUI](../assets/linux-binance-login-en.webp)
 
-**Start WebUI again** using the same Linux account as during setup. From the setup directory, run the `sh ./start.sh` command shown by the wizard, including any `--port` argument. Regular users can start it without `sudo`.
+## 4. Start CueFleet or change the password
 
-To change the window password, stop the client and run `sh ./start.sh --set-password`.
+Run `cuefleet start` with the same account that ran setup. Keep the `--port` argument if the wizard showed a custom port.
 
-To change the access mode, stop the client and run `sh ./setup.sh`.
+To change the window password, stop the client and run `cuefleet set-password`. To change access mode, run `cuefleet setup` again.
+
+<details>
+<summary>Use the portable .tar.gz archive</summary>
+
+[Download the portable archive](https://cuefleet.com/download/linux), extract it, then run `sh ./setup.sh --lang en`. To start again, use the `sh ./start.sh` command shown by the wizard.
+
+</details>

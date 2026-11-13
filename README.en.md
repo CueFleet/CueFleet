@@ -4,7 +4,7 @@
 
 **Desktop trading, local API access and copy trading in one client.**
 
-**[Download for Windows](https://cuefleet.com/download/windows)** · **[Download for Linux](https://cuefleet.com/download/linux)** · **[Linux setup guide](docs/linux.en.md)** · [Website](https://cuefleet.com/website/en.html) · [Discord](https://discord.gg/phjusp8TT) · [简体中文](README.md)
+**[Download for Windows](https://cuefleet.com/download/windows)** · **[Download Linux .deb](https://cuefleet.com/download/linux-deb)** · **[Linux setup guide](docs/linux.en.md)** · [Website](https://cuefleet.com/website/en.html) · [Discord](https://discord.gg/phjusp8TT) · [简体中文](README.md)
 
 ## Features
 
@@ -26,7 +26,7 @@ The product demo uses historical prices and example orders.
 ## Installation and support
 
 - **Windows x64**　Download and run the installer.
-- **Linux x86-64**　Extract the archive and run `sh ./setup.sh` directly. The wizard handles system permissions. [See the Linux quick start](docs/linux.en.md).
+- **Ubuntu 24.04 x86-64**　Install the `.deb` with APT and run `cuefleet setup`. [See the Linux quick start](docs/linux.en.md).
 
 Get help through [website support](https://cuefleet.com/website/en.html#help), [Discord](https://discord.gg/phjusp8TT) or [email](mailto:support@cuefleet.com).
 
