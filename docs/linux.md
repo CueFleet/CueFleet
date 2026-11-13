@@ -6,7 +6,7 @@
 
 ## 1. 安装 CueFleet
 
-用有 sudo 权限的普通用户登录服务器，在空目录运行。
+用 `root` 或有 sudo 权限的普通用户登录服务器，在空目录运行。用 `root` 安装时，向导会自动准备专用用户运行 CueFleet。
 
 ```bash
 curl -fL https://cuefleet.com/download/linux -o CueFleet-Linux-x64.tar.gz &&

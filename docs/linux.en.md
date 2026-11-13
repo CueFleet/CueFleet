@@ -6,7 +6,7 @@ Requires **Ubuntu 24.04 (x86-64)**. Install on the server, then open WebUI from 
 
 ## 1. Install CueFleet
 
-Sign in to the server as a regular user with sudo access and run these commands in an empty directory.
+Sign in to the server as `root` or a regular user with sudo access and run these commands in an empty directory. When started as `root`, setup prepares a dedicated user to run CueFleet.
 
 ```bash
 curl -fL https://cuefleet.com/download/linux -o CueFleet-Linux-x64.tar.gz &&
