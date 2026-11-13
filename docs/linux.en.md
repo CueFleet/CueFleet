@@ -15,28 +15,28 @@ cd CueFleet-Linux-x64 &&
 sh ./setup.sh
 ```
 
-Set a window password when prompted. Leave the terminal open after startup.
+Set a window password. For access from your phone or another computer, choose **yes** when asked to set up free HTTPS. Confirm or enter your server’s public IPv4 address. CueFleet renews the certificate automatically. Leave the terminal open after startup.
 
-![Linux setup wizard displaying browser addresses](../assets/linux-install-en.webp)
+Allow public inbound TCP `80` in your cloud and server firewalls for certificate issuance and renewal. The default WebUI port is TCP `19425`. You can restrict it to the connecting device’s public IP.
 
 ## 2. Open WebUI in your browser
 
-Open the address shown by the wizard on your computer or phone, for example `http://SERVER_IP:19425/`. Enter the window password. The default port is `19425`.
+Open the HTTPS address shown by the wizard on your phone or computer and enter the window password.
 
 ![CueFleet window unlock page in a phone browser](../assets/linux-window-lock-en.webp)
 
-Allow the selected TCP port in your firewall only from the connecting device’s public IP. **Public HTTP is unencrypted. Use a trusted encrypted connection to sign in or trade.**
-
 ## 3. Add a Binance account
 
-On the server, open `http://127.0.0.1:19425/` in a browser. For remote sign-in, use trusted HTTPS. Then open **Binance Accounts → Add account**, accept the agreement, and complete sign-in in the official Binance window.
+Open **Binance Accounts → Add account**, accept the agreement, and complete sign-in in the official Binance window.
 
 ![Add account in CueFleet WebUI](../assets/linux-binance-account-en.webp)
 
 ![Binance account connection prompt in CueFleet WebUI](../assets/linux-binance-login-en.webp)
 
 <details>
-<summary>Configure HTTPS with an existing trusted certificate</summary>
+<summary>If certificate setup fails or you already have a certificate</summary>
+
+If certificate setup fails, check your server’s public IPv4 and the inbound rules for TCP `80`, then retry. If you skipped HTTPS, run `sh ./setup.sh` again. If an existing website uses TCP `80`, you can use your own trusted certificate.
 
 Stop the running client. Replace the domain and certificate paths, then run:
 
@@ -48,6 +48,8 @@ sh ./start.sh
 ```
 
 Open `https://your-domain.example:19425/`. If you use a custom port, use that same port to start the client and open the page.
+
+For access directly from the server, use the local address shown by the wizard. Public HTTP is unencrypted. Use trusted HTTPS to sign in or trade remotely.
 
 </details>
 
