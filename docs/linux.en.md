@@ -60,7 +60,9 @@ If the server uses SSH keys, add your public key for the new user and verify tha
 
 ### Connect directly to a public IP
 
-In the wizard, choose public HTTP, enter the server's public IPv4 address, and set a separate window password and idle lock timeout. Allow the selected TCP port in the cloud and server firewalls. You can restrict access to your own public IP. Open the address shown by the wizard, unlock the window, and sign in to CueFleet.
+Only public HTTP asks for the **public IPv4 address of the Linux server running CueFleet**. You can find it in your hosting dashboard. CueFleet checks this address against the address your browser uses to open WebUI. Local access and SSH forwarding skip this field.
+
+Set a window password and idle lock timeout, then allow the selected TCP port in the cloud and server firewalls. You can limit the firewall source to the public IP of the computer you connect from. Open the address shown by the wizard, unlock the window, and sign in to CueFleet.
 
 **Public HTTP is unencrypted. Someone on the network could intercept the password or login session.** For private remote access, use SSH forwarding.
 
@@ -79,7 +81,7 @@ The first command uses the default port. The second sets a custom port. The supp
 sh ./start.sh --public-http 203.0.113.10 --port 19426 --idle-minutes 10
 ```
 
-Replace `203.0.113.10` with your server's public IPv4 address. The idle lock timeout can be `1–120` minutes and defaults to `10`. CueFleet keeps running while the window is locked.
+Replace `203.0.113.10` with the public IPv4 address of the Linux server running CueFleet. The idle lock timeout can be `1–120` minutes and defaults to `10`. CueFleet keeps running while the window is locked.
 
 ### Download and verify from the server
 
