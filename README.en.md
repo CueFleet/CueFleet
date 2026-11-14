@@ -14,6 +14,10 @@
 
 [Explore the copy trading marketplace](https://cuefleet.com/website/en.html#leaders) · [Create a CueFleet account](https://cuefleet.com/register#lang=en)
 
+![CueFleet copy trading marketplace demo showing project filters, PnL charts, and follow controls](assets/copy-market-en.webp)
+
+Project figures are shown for demonstration.
+
 <details>
 <summary>See the trading workspace</summary>
 

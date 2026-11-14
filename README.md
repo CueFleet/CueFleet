@@ -14,6 +14,10 @@
 
 [浏览跟单广场](https://cuefleet.com/#leaders) · [注册 CueFleet](https://cuefleet.com/register)
 
+![CueFleet 跟单广场演示，展示项目筛选、盈亏曲线与跟单入口](assets/copy-market-zh-cn.webp)
+
+图中项目数据为界面演示。
+
 <details>
 <summary>查看交易界面</summary>
 
