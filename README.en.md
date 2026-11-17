@@ -12,7 +12,7 @@
 - **API trading**　Enable the local API while the client is running so your strategy can query accounts, submit orders and check receipts. Find the API reference in the client.
 - **Copy trading**　Compare project performance, try paper following or subscribe in the client. You can also apply to lead a project and earn a share of eligible subscription fees.
 
-**[Open-source strategy skill](skills/cuefleet-vibe-trading/)** · [Explore the copy trading marketplace](https://cuefleet.com/website/en.html#leaders) · [Create a CueFleet account](https://cuefleet.com/register#lang=en)
+**[Open-source strategy skill](https://github.com/CueFleet/event-contract-skill)** · [Explore the copy trading marketplace](https://cuefleet.com/website/en.html#leaders) · [Create a CueFleet account](https://cuefleet.com/register#lang=en)
 
 ![CueFleet copy trading marketplace demo showing project filters, PnL charts, and follow controls](assets/copy-market-en.webp)
 

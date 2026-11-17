@@ -12,7 +12,7 @@
 - **API 交易**　客户端运行时可开启本机 API，让自己的策略查询账户、提交订单和读取回执。接口文档内置于客户端。
 - **跟单广场**　查看项目表现，先模拟跟随，或在客户端订阅项目。也可以申请成为带单员，获得符合条件的订阅分润。
 
-**[开源策略 Skill](skills/cuefleet-vibe-trading/)** · [浏览跟单广场](https://cuefleet.com/#leaders) · [注册 CueFleet](https://cuefleet.com/register)
+**[开源策略 Skill](https://github.com/CueFleet/event-contract-skill)** · [浏览跟单广场](https://cuefleet.com/#leaders) · [注册 CueFleet](https://cuefleet.com/register)
 
 ![CueFleet 跟单广场演示，展示项目筛选、盈亏曲线与跟单入口](assets/copy-market-zh-cn.webp)
 
