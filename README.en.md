@@ -2,17 +2,25 @@
 
 # CueFleet · Binance Event Contract Trading
 
-**Desktop trading, local API access and copy trading in one client.**
+**Trade Binance event contracts with CueFleet. Place trades from your desktop, follow live projects, or connect your own strategy.**
 
 **[Download for Windows](https://cuefleet.com/download/windows)** · **[Download Linux .deb](https://cuefleet.com/download/linux-deb)** · **[Linux setup guide](docs/linux.en.md)** · [Website](https://cuefleet.com/website/en.html) · [Discord](https://discord.gg/phjusp8TT) · [简体中文](README.md)
 
 ## Features
 
 - **Desktop trading**　View BTC and ETH index charts, place orders, track open positions and see settlement results in one workspace.
-- **API trading**　Enable the local API while the client is running so your strategy can query accounts, submit orders and check receipts. Find the API reference in the client.
-- **Copy trading**　Compare project performance, try paper following or subscribe in the client. You can also apply to lead a project and earn a share of eligible subscription fees.
+- **Live copy trading**　Review lead traders' performance and order history, subscribe, then link an authorized account and choose your order size.
+- **Custom strategies**　Use the open-source Skill to fetch market data, backtest and export a signal service. Run your execution program on the same machine and connect it to the CueFleet local trading API to place live orders and check receipts.
 
-**[Open-source strategy skill](https://github.com/CueFleet/event-contract-skill)** · [Explore the copy trading marketplace](https://cuefleet.com/website/en.html#leaders) · [Create a CueFleet account](https://cuefleet.com/register#lang=en)
+**[Watch the product tutorial](https://cuefleet.com/website/en.html#video)** · [Explore the copy trading marketplace](https://cuefleet.com/website/en.html#leaders) · [Create a CueFleet account](https://cuefleet.com/register#lang=en)
+
+## From research to live trading
+
+![Custom strategy workflow: build and backtest with AI, deploy the signal service, then trade and check receipts using an authorized Binance account.](assets/strategy-workflow-en.webp)
+
+**[Live trading guide](https://github.com/CueFleet/event-contract-skill/blob/main/docs/quickstart.md#实盘接入)** · [Open-source strategy Skill](https://github.com/CueFleet/event-contract-skill) · [Historical market data case study](https://github.com/CueFleet/event-contract-skill/blob/main/docs/btc-volume-breakout.md)
+
+## Client preview
 
 ![CueFleet copy trading marketplace demo showing project filters, PnL charts, and follow controls](assets/copy-market-en.webp)
 

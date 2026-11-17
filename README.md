@@ -2,17 +2,25 @@
 
 # CueFleet · 币安事件合约交易
 
-**在一个客户端完成桌面交易、接入本机 API 和跟单。**
+**用 CueFleet 交易币安事件合约。支持桌面下单、实盘跟单，也能把自研策略接进实盘。**
 
 **[下载 Windows](https://cuefleet.com/download/windows)** · **[下载 Linux .deb](https://cuefleet.com/download/linux-deb)** · **[Linux 使用教程](docs/linux.md)** · [访问官网](https://cuefleet.com/) · [加入 Discord](https://discord.gg/phjusp8TT) · [English](README.en.md)
 
 ## 产品功能
 
 - **桌面交易**　查看 BTC、ETH 指数 K 线，在同一个界面下单、跟踪持仓和查看结算。
-- **API 交易**　客户端运行时可开启本机 API，让自己的策略查询账户、提交订单和读取回执。接口文档内置于客户端。
-- **跟单广场**　查看项目表现，先模拟跟随，或在客户端订阅项目。也可以申请成为带单员，获得符合条件的订阅分润。
+- **实盘跟单**　在项目广场查看带单员的业绩与订单，订阅后绑定授权账号，设置跟单金额并核对交易记录。
+- **自研策略**　用开源 Skill 下载行情、回测和导出信号服务。通过部署在同一台机器的执行程序接入 CueFleet 本机交易 API，提交实盘订单并查询回执。
 
-**[开源策略 Skill](https://github.com/CueFleet/event-contract-skill)** · [浏览跟单广场](https://cuefleet.com/#leaders) · [注册 CueFleet](https://cuefleet.com/register)
+**[观看产品教程](https://cuefleet.com/#video)** · [浏览跟单广场](https://cuefleet.com/#leaders) · [注册 CueFleet](https://cuefleet.com/register)
+
+## 从研究到实盘
+
+![自研策略流程。用 AI 写策略并回测，部署信号服务，再用已授权的币安账户下单与查回执。](assets/strategy-workflow-zh-cn.webp)
+
+**[实盘接入指南](https://github.com/CueFleet/event-contract-skill/blob/main/docs/quickstart.md#实盘接入)** · [开源策略 Skill](https://github.com/CueFleet/event-contract-skill) · [真实行情案例](https://github.com/CueFleet/event-contract-skill/blob/main/docs/btc-volume-breakout.md)
+
+## 客户端预览
 
 ![CueFleet 跟单广场演示，展示项目筛选、盈亏曲线与跟单入口](assets/copy-market-zh-cn.webp)
 
