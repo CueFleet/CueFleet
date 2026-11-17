@@ -32,6 +32,6 @@ The product demo uses historical prices and example orders.
 - **Windows x64**　Download and run the installer.
 - **Ubuntu 24.04 x86-64**　Install the `.deb` with APT, set a window password with `cuefleet setup --set-password`, and run `cuefleet start`. [See the Linux quick start](docs/linux.en.md)
 
-Get help through [website support](https://cuefleet.com/website/en.html#help), [Discord](https://discord.gg/phjusp8TT) or [email](mailto:support@cuefleet.com).
+Get help through [Telegram @lazyer_trading](https://t.me/lazyer_trading), [website support](https://cuefleet.com/website/en.html#help), [Discord](https://discord.gg/phjusp8TT), or [email](mailto:support@cuefleet.com).
 
 CueFleet is third-party software. Binance sets trading eligibility. Event contract trading can result in losses, and past performance does not predict future returns.
