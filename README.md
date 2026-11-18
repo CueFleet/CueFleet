@@ -4,7 +4,7 @@
 
 **用 CueFleet 交易币安事件合约。支持桌面下单、实盘跟单，也能把自研策略接进实盘。**
 
-**[下载 Windows](https://cuefleet.com/download/windows)** · **[下载 Linux .deb](https://cuefleet.com/download/linux-deb)** · **[Linux 使用教程](docs/linux.md)** · [访问官网](https://cuefleet.com/) · <a href="https://t.me/lazyer_trading" title="Telegram 联系 @lazyer_trading"><img src="assets/telegram.svg" width="20" height="20" alt=""> Telegram</a> · [加入 Discord](https://discord.gg/phjusp8TT) · [English](README.en.md)
+**[下载 Windows](https://cuefleet.com/download/windows)** · **[下载 Linux .deb](https://cuefleet.com/download/linux-deb)** · **[Linux 使用教程](docs/linux.md)** · [访问官网](https://cuefleet.com/) · <a href="https://t.me/lazyer_trading" title="Telegram 联系 @lazyer_trading"><img src="https://cuefleet.com/website/telegram.svg" width="20" height="20" alt=""> Telegram</a> · [加入 Discord](https://discord.gg/phjusp8TT) · [English](README.en.md)
 
 ## 产品功能
 
@@ -40,6 +40,6 @@
 - **Windows x64**　下载安装包，按提示完成安装。
 - **Ubuntu 24.04 x86-64**　用 APT 安装 `.deb`，运行 `cuefleet setup --set-password` 设置锁屏密码，再运行 `cuefleet start`。[查看 Linux 快速开始](docs/linux.md)
 
-使用中遇到问题，可以通过 <a href="https://t.me/lazyer_trading"><img src="assets/telegram.svg" width="16" height="16" alt=""> Telegram @lazyer_trading</a>、[官网在线客服](https://cuefleet.com/#help)、[Discord 社区](https://discord.gg/phjusp8TT)或[邮件](mailto:support@cuefleet.com)联系。
+使用中遇到问题，可以通过 <a href="https://t.me/lazyer_trading"><img src="https://cuefleet.com/website/telegram.svg" width="16" height="16" alt=""> Telegram @lazyer_trading</a>、[官网在线客服](https://cuefleet.com/#help)、[Discord 社区](https://discord.gg/phjusp8TT)或[邮件](mailto:support@cuefleet.com)联系。
 
 CueFleet 是第三方软件。交易资格以币安规则为准。事件合约可能亏损，历史表现不代表未来收益。
