@@ -4,7 +4,7 @@
 
 **Trade Binance event contracts with CueFleet. Place trades from your desktop, follow live projects, or connect your own strategy.**
 
-**[Download for Windows](https://cuefleet.com/download/windows)** · **[Download Linux .deb](https://cuefleet.com/download/linux-deb)** · **[Linux setup guide](docs/linux.en.md)** · [Website](https://cuefleet.com/website/en.html) · [Discord](https://discord.gg/phjusp8TT) · [简体中文](README.md)
+**[Download for Windows](https://cuefleet.com/download/windows)** · **[Download Linux .deb](https://cuefleet.com/download/linux-deb)** · **[Linux setup guide](docs/linux.en.md)** · [Website](https://cuefleet.com/website/en.html) · <a href="https://t.me/lazyer_trading" title="Contact @lazyer_trading on Telegram"><img src="assets/telegram.svg" width="20" height="20" alt=""> Telegram</a> · [Discord](https://discord.gg/phjusp8TT) · [简体中文](README.md)
 
 ## Features
 
@@ -40,6 +40,6 @@ The product demo uses historical prices and example orders.
 - **Windows x64**　Download and run the installer.
 - **Ubuntu 24.04 x86-64**　Install the `.deb` with APT, set a window password with `cuefleet setup --set-password`, and run `cuefleet start`. [See the Linux quick start](docs/linux.en.md)
 
-Get help through [Telegram @lazyer_trading](https://t.me/lazyer_trading), [website support](https://cuefleet.com/website/en.html#help), [Discord](https://discord.gg/phjusp8TT), or [email](mailto:support@cuefleet.com).
+Get help through <a href="https://t.me/lazyer_trading"><img src="assets/telegram.svg" width="16" height="16" alt=""> Telegram @lazyer_trading</a>, [website support](https://cuefleet.com/website/en.html#help), [Discord](https://discord.gg/phjusp8TT), or [email](mailto:support@cuefleet.com).
 
 CueFleet is third-party software. Binance sets trading eligibility. Event contract trading can result in losses, and past performance does not predict future returns.
